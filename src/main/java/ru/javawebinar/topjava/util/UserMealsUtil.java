@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class UserMealsUtil {
@@ -33,7 +34,7 @@ public class UserMealsUtil {
     }
 
     public static List<UserMealWithExcess> filteredUsingLoops(List<UserMeal> meals, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
-        var daysToCalories = new HashMap<LocalDate, Integer>();
+        Map<LocalDate, Integer> daysToCalories = new HashMap<>();
         for (UserMeal meal : meals) {
             var date = meal.getDateTime().toLocalDate();
             var calTotal = daysToCalories.get(date);
